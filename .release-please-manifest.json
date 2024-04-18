@@ -1,5 +1,8 @@
 {
-    "extra-files": ["README.md"],
+    "extra-files": [
+        "README.md"
+    ],
     "pull-request-title-pattern": "chore(release): ${version}",
-    "pull-request-header": ":robot: Merge this PR to release a new version"
+    "pull-request-header": ":robot: Merge this PR to release a new version",
+    ".": "0.1.0"
 }
