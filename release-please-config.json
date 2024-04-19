@@ -2,7 +2,7 @@
     "packages": {
         ".": {
             "release-type": "python",
-            "pull-request-title-pattern": "chore(release): ${version}",
+            "pull-request-title-pattern": "chore(release): ${version} - ${scope} - ${component}",
             "pull-request-header": ":robot: Merge this PR to release a new version",
             "extra-files": [
                 "README.md"
