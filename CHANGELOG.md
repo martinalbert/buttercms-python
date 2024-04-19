@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/martinalbert/buttercms-python/compare/v2.1.0...v2.2.0) (2024-04-19)
+
+
+### Features
+
+* add scope and component ([b0b7f42](https://github.com/martinalbert/buttercms-python/commit/b0b7f42ed7e4d0c0b6e1c6ad25c6eca4e8583efd))
+
 ## [2.1.0](https://github.com/martinalbert/buttercms-python/compare/v2.0.0...v2.1.0) (2024-04-19)
 
 
