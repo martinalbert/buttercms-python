@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/martinalbert/buttercms-python/compare/v2.1.0...v2.2.0) (2024-04-19)
+
+
+### Features
+
+* add mechanism for pre-releases ([176f6bf](https://github.com/martinalbert/buttercms-python/commit/176f6bfd4c7b11b149004f159ca2ed1f998fdee6))
+
 ## [2.1.0](https://github.com/martinalbert/buttercms-python/compare/v2.0.0...v2.1.0) (2024-04-19)
 
 
