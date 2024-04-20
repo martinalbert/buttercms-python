@@ -1,0 +1,13 @@
+{
+    "skip-github-pull-request": true,
+    "prerelease": true,
+    "prerelease-type": "beta",
+    "packages": {
+        ".": {
+            "release-type": "python",
+            "extra-files": [
+                "README.md"
+            ]
+        }
+    }
+}
