@@ -1,0 +1,87 @@
+name: Build & Publish pre-release to Pypi
+
+on:
+  push:
+    branches:
+      - release-please--branches--master
+
+jobs:
+  # test:
+  #   if: startsWith(github.event.head_commit.message, 'chore(release)')
+  #   uses: "./.github/workflows/test.yml"
+
+  build:
+    # needs: 
+    # - test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Install pypa/build
+      run: >-
+        python3 -m
+        pip install
+        build
+        --user
+
+    - name: Build a binary wheel and a source tarball
+      run: python3 -m build
+    
+    - name: Store the distribution packages
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-package-distributions
+        path: dist/
+
+  prepare-and-publish:
+    name: Prepare pre-release and publish to Pypi
+    runs-on: ubuntu-latest
+    needs: 
+    - build
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/buttercms-python-testing-fork
+    permissions:
+      id-token: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Extract version from commit message
+      id: get_version
+      run: |
+        COMMIT_MESSAGE=$(git log --format=%B -n 1)
+        echo "Commit message: $COMMIT_MESSAGE"
+        # Adjust the grep pattern to match the "chore(release): X.X.X" format
+        VERSION=$(echo "$COMMIT_MESSAGE" | grep -oP 'chore\(release\): \K\d+\.\d+\.\d+')
+        echo "Extracted version: $VERSION"
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+    
+    # - name: Tag Pre-release
+    #   run: |
+    #     VERSION=${{ steps.get_version.outputs.version }}
+    #     PRE_RELEASE_TAG="${VERSION}-pre"
+    #     git tag $PRE_RELEASE_TAG
+    #     git push origin $PRE_RELEASE_TAG
+    #     echo "Tagged with pre-release version: $PRE_RELEASE_TAG"
+    
+    # - name: Download all the dists
+    #   uses: actions/download-artifact@v3
+    #   with:
+    #     name: python-package-distributions
+    #     path: dist/
+
+    # - name: Publish distribution 📦 to PyPI
+    #   uses: pypa/gh-action-pypi-publish@release/v1
+    #   with:
+    #     repository-url: https://test.pypi.org/legacy/
