@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/martinalbert/buttercms-python/compare/v3.0.1...v3.0.2) (2024-04-24)
+
+
+### Bug Fixes
+
+* use version in setup.py ([1c0e6ed](https://github.com/martinalbert/buttercms-python/commit/1c0e6ed5b886c545f59a41dfe45a2cd2653e3bd1))
+
 ## [3.0.1](https://github.com/martinalbert/buttercms-python/compare/v3.0.0...v3.0.1) (2024-04-22)
 
 
