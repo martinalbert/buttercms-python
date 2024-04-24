@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/martinalbert/buttercms-python/compare/v3.0.1...v3.0.2) (2024-04-24)
+
+
+### Bug Fixes
+
+* use exec instead of reading ([40b5d99](https://github.com/martinalbert/buttercms-python/commit/40b5d995ed890bee779b23038b535b83cb5e77a5))
+
 ## [3.0.1](https://github.com/martinalbert/buttercms-python/compare/v3.0.0...v3.0.1) (2024-04-22)
 
 
