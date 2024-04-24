@@ -8,6 +8,7 @@ except ImportError:
 with open('README.md', 'r') as f:
     readme = f.read()
 
+__version__ = '3.0.1'
 
 install_requires = []
 if sys.version_info < (2, 7, 9):
@@ -20,17 +21,10 @@ if sys.version_info < (2, 7, 9):
 else:
     install_requires.append('requests')
 
-def get_version():
-    for line in open('buttercms-python-testing-fork/version.py', 'r'):
-        if line.startswith('__version__'):
-            return line.split('=')[1].strip().strip("'")
-
-    return RuntimeError('Unable to find version string.')
-
 setup(
     name = 'buttercms-python-testing-fork',
     packages=find_packages(),
-    version=get_version(),
+    version=__version__,
     description = 'API First Blogging and CMS platform built for developers',
     long_description=readme,
     long_description_content_type="text/markdown",
