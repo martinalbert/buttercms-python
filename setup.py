@@ -1,4 +1,5 @@
 import sys
+import os
 
 try:
     from setuptools import setup, find_packages
@@ -20,17 +21,18 @@ if sys.version_info < (2, 7, 9):
 else:
     install_requires.append('requests')
 
-def get_version():
-    for line in open('buttercms-python-testing-fork/version.py', 'r'):
-        if line.startswith('__version__'):
-            return line.split('=')[1].strip().strip("'")
+package_root = os.path.abspath(os.path.dirname(__file__))
+version = {}
 
-    return RuntimeError('Unable to find version string.')
+with open(os.path.join(package_root, "buttercms-python-testing-fork/version.py")) as fp:
+    exec(fp.read(), version)
+
+version = version["__version__"]
 
 setup(
     name = 'buttercms-python-testing-fork',
     packages=find_packages(),
-    version=get_version(),
+    version=version,
     description = 'API First Blogging and CMS platform built for developers',
     long_description=readme,
     long_description_content_type="text/markdown",
@@ -39,6 +41,7 @@ setup(
     url = 'https://github.com/martinalbert/buttercms-python',
     download_url = 'https://github.com/martinalbert/buttercms-python/tarball/0.1',
     install_requires=install_requires,
+    py_modules=['buttercms_python_testing_fork'],
     keywords = ['buttercms', 'sdk', 'cms', 'api', 'blogging'],
     classifiers=[
         'Development Status :: 3 - Alpha',
