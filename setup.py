@@ -9,7 +9,6 @@ except ImportError:
 with open('README.md', 'r') as f:
     readme = f.read()
 
-
 install_requires = []
 if sys.version_info < (2, 7, 9):
     raise Exception('ButterCMS uses the requests library to securely talk to https://buttercms.com '
@@ -24,7 +23,7 @@ else:
 package_root = os.path.abspath(os.path.dirname(__file__))
 version = {}
 
-with open(os.path.join(package_root, "buttercms-python-testing-fork/version.py")) as fp:
+with open(os.path.join(package_root, "buttercms_python_testing_fork/version.py")) as fp:
     exec(fp.read(), version)
 
 version = version["__version__"]
