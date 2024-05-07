@@ -8,12 +8,12 @@ on:
 
 jobs:
   test:
-    if: startsWith(github.event.head_commit.message, 'chore(release)')
+    if: contains(github.event.head_commit.message, 'chore(release)')
     uses: ./.github/workflows/test.yml
 
   build:
     needs: test
-    if: startsWith(github.event.head_commit.message, 'chore(release)')
+    if: contains(github.event.head_commit.message, 'chore(release)')
     runs-on: ubuntu-22.04
     steps:  
     - name: Checkout code
@@ -47,7 +47,7 @@ jobs:
     name: >-
       Publish to Test PyPI
     needs: build
-    if: startsWith(github.event.head_commit.message, 'chore(release)')
+    if: contains(github.event.head_commit.message, 'chore(release)')
     runs-on: ubuntu-22.04
 
     environment:
