@@ -23,11 +23,10 @@ else:
 package_root = os.path.abspath(os.path.dirname(__file__))
 version = {}
 
-with open(os.path.join(package_root, "buttercms-python-testing-fork/version.py")) as fp:
+with open(os.path.join(package_root, "buttercms_python_testing_fork/version.py")) as fp:
     exec(fp.read(), version)
 
 version = version["__version__"]
-
 
 setup(
     name = 'buttercms-python-testing-fork',
@@ -41,6 +40,7 @@ setup(
     url = 'https://github.com/martinalbert/buttercms-python',
     download_url = 'https://github.com/martinalbert/buttercms-python/tarball/0.1',
     install_requires=install_requires,
+    py_modules=['buttercms_python_testing_fork'],
     keywords = ['buttercms', 'sdk', 'cms', 'api', 'blogging'],
     classifiers=[
         'Development Status :: 3 - Alpha',
