@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0](https://github.com/martinalbert/buttercms-python/compare/v3.0.1...v3.1.0) (2024-05-07)
+
+
+### Features
+
+* add tests ([db952bd](https://github.com/martinalbert/buttercms-python/commit/db952bd1a8f66c679ed6422855c2ef39ff679238))
+
+
+### Bug Fixes
+
+* use exec instead of reading ([40b5d99](https://github.com/martinalbert/buttercms-python/commit/40b5d995ed890bee779b23038b535b83cb5e77a5))
+
 ## [3.0.1](https://github.com/martinalbert/buttercms-python/compare/v3.0.0...v3.0.1) (2024-04-22)
 
 
