@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/martinalbert/buttercms-python/compare/v3.1.0...v3.2.0) (2024-05-07)
+
+
+### Features
+
+* update api version ([4b430af](https://github.com/martinalbert/buttercms-python/commit/4b430affd3bebd63dc9c230648ff07f3967f171e))
+
 ## [3.1.0](https://github.com/martinalbert/buttercms-python/compare/v3.0.1...v3.1.0) (2024-05-07)
 
 
