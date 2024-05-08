@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.0](https://github.com/martinalbert/buttercms-python/compare/v3.4.0...v3.5.0) (2024-05-08)
+
+
+### Features
+
+* implement proper version control in requirements.txt ([4d30313](https://github.com/martinalbert/buttercms-python/commit/4d30313d81f331f13ddeb024f0b4fe970a0b53b6))
+
 ## [3.4.0](https://github.com/martinalbert/buttercms-python/compare/v3.3.0...v3.4.0) (2024-05-07)
 
 
